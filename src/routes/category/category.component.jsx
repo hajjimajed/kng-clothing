@@ -1,4 +1,4 @@
-import './category.styles.scss'
+import { CategoryContainer, CategoryTitle } from './category.styles';
 
 import { useParams } from 'react-router-dom';
 
@@ -24,15 +24,15 @@ const Category = () => {
 
     return (
         <>
-            <h2 className='category-title'>{category}</h2>
-            <div className='category-container'>
+            <CategoryTitle>{category}</CategoryTitle>
+            <CategoryContainer>
 
 
 
                 {products &&
                     products.map((product) => <ProductCard key={product.id} product={product} />)
                 }
-            </div>
+            </CategoryContainer>
         </>
 
     )

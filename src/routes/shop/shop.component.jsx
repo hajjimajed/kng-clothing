@@ -4,7 +4,6 @@ import Category from '../category/category.component';
 
 import { Route, Routes } from 'react-router-dom';
 
-import './shop.styles.scss'
 
 
 
