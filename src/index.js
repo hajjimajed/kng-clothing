@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+
 import App from './App';
-import { UserProvider } from './contexts/user.context';
 
 import { CategoriesProvider } from './contexts/categories.context';
 
@@ -19,9 +21,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
 
-    <BrowserRouter>
+    <Provider store={store}>
 
-      <UserProvider>
+      <BrowserRouter>
 
         <CategoriesProvider>
 
@@ -33,9 +35,9 @@ root.render(
 
         </CategoriesProvider>
 
-      </UserProvider>
+      </BrowserRouter>
 
-    </BrowserRouter>
+    </Provider>
 
   </React.StrictMode>
 );
