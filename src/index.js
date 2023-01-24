@@ -8,9 +8,6 @@ import { store } from './store/store';
 
 import App from './App';
 
-import { CartProvider } from './contexts/cart.context';
-
-
 import './index.scss';
 
 
@@ -23,11 +20,7 @@ root.render(
 
       <BrowserRouter>
 
-        <CartProvider>
-
-          <App />
-
-        </CartProvider>
+        <App />
 
       </BrowserRouter>
 
