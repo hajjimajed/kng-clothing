@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { PersistGate } from 'redux-persist/integration/react';
+import { Elements } from '@stripe/react-stripe-js';
 
 import { Provider } from 'react-redux';
 import { store, persistor } from './store/store';
+
+import { stripePromise } from './utils/stripe/stripe.utils';
 
 import App from './App';
 
@@ -23,7 +26,11 @@ root.render(
 
         <BrowserRouter>
 
-          <App />
+          <Elements stripe={stripePromise}>
+
+            <App />
+
+          </Elements>
 
         </BrowserRouter>
 
